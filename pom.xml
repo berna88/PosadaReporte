@@ -75,6 +75,12 @@
 			<artifactId>lowie</artifactId>
 			<version>2.1.7</version>
 		</dependency>
+		<dependency>
+   			<groupId>com.liferay</groupId>
+   			<artifactId>com.liferay.journal.api</artifactId>
+   			<version>3.4.1</version>
+   			<scope>provided</scope>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>

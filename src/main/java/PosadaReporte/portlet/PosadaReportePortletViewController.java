@@ -21,7 +21,8 @@ import com.liferay.document.library.kernel.model.DLFileEntry;
 import com.liferay.document.library.kernel.model.DLFolderConstants;
 import com.liferay.document.library.kernel.service.DLAppServiceUtil;
 import com.liferay.document.library.kernel.service.DLFileEntryLocalServiceUtil;
-//import com.liferay.journal.model.JournalArticle;
+import com.liferay.journal.model.JournalArticle;
+import com.liferay.journal.service.JournalArticleLocalServiceUtil;
 //import com.liferay.journal.service.JournalArticleLocalServiceUtil;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.repository.model.Folder;
@@ -41,6 +42,16 @@ public class PosadaReportePortletViewController {
 
 	@RenderMapping
 	public String view(RenderRequest request, RenderResponse response) {
+		
+		List<JournalArticle> articles = JournalArticleLocalServiceUtil.getArticles();
+		
+		for(JournalArticle art: articles){
+			System.out.println(art.getTitle() + " : "
+					+ art.getVersion() + " : "+ 
+					art.getUserName() + " : " +
+					art.getModifiedDate());
+		}
+		
 		return "view";
 	}
 	
